@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="description" content="Lulu Coin Rush — run, jump and fly through an endless world, collect every Lulu coin.">
+<title>Lulu Coin Rush</title>
+<link rel="icon" href="assets/frames/stand.webp" type="image/webp">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div id="brand"><span class="mini-coin">L</span><span id="brand-text">LULU COIN RUSH</span></div>
+  <div class="hud-chips">
+    <span class="chip" id="combo-chip">x2</span>
+    <span class="chip" id="coin-chip"><span class="c"></span><span id="coin-count">0</span></span>
+    <span class="chip" id="meters">0 m</span>
+    <span class="chip" id="best-chip">BEST 0</span>
+    <button class="icon-btn" id="sound-btn" title="Sound">🔊</button>
+    <button class="icon-btn" id="lang-btn" title="Language">中</button>
+    <button class="icon-btn" id="pause-btn" title="Pause">⏸</button>
+  </div>
+</header>
+<div id="ms-wrap"><div id="ms-fill"></div></div>
+
+<div id="world">
+  <div class="layer" id="hills-far"></div>
+  <div class="layer" id="hills-near"></div>
+  <div class="layer" id="clouds"></div>
+  <div class="layer" id="ground-wrap"><div id="ground"></div></div>
+  <div id="objects"></div>
+  <div id="hint"></div>
+  <div id="aura"></div>
+  <div id="shadow"></div>
+  <div id="char"></div>
+</div>
+
+<div id="controls">
+  <button class="btn" id="run-l-btn">◀ <span data-i18n="run">RUN</span><kbd>A</kbd></button>
+  <button class="btn" id="run-r-btn"><span data-i18n="run">RUN</span> ▶<kbd>D</kbd></button>
+  <button class="btn" id="jump-btn"><span data-i18n="jump">JUMP</span><kbd>SPACE</kbd></button>
+  <button class="btn" id="fly-btn"><span data-i18n="fly">FLY</span><kbd>F</kbd></button>
+  <span id="fly-ctrl">
+    <button class="btn" id="fly-up-btn"><span data-i18n="up">UP</span><kbd>↑</kbd></button>
+    <button class="btn" id="fly-down-btn"><span data-i18n="down">DOWN</span><kbd>↓</kbd></button>
+  </span>
+  <button class="btn" data-pose="surprise"><span data-i18n="p_surprise">SHOCK</span><kbd>1</kbd></button>
+  <button class="btn" data-pose="laugh"><span data-i18n="p_laugh">LOL</span><kbd>2</kbd></button>
+  <button class="btn" data-pose="lie"><span data-i18n="p_lie">NAP</span><kbd>3</kbd></button>
+</div>
+
+<div class="overlay" id="start-overlay">
+  <div class="card">
+    <h1><span class="mini-coin">L</span><span id="title-text">LULU COIN RUSH</span><span class="mini-coin">L</span></h1>
+    <img id="mascot" src="assets/frames/laugh.webp" alt="Lulu">
+    <div class="tag" id="tagline-text">Grab the Lulu coins. ALL of them.</div>
+    <div class="howto">
+      <div>🏃 <span data-i18n="h_run">A/D or ←→ to run</span></div>
+      <div>⬆️ <span data-i18n="h_jump">Space to jump, hold = higher</span></div>
+      <div>🕊️ <span data-i18n="h_fly">F to fly, ↑ climb / ↓ swoop</span></div>
+      <div>💰 <span data-i18n="h_coin">Touch coins to collect</span></div>
+      <div>🔥 <span data-i18n="h_combo">Quick picks = combo multiplier</span></div>
+      <div>🧲 <span data-i18n="h_power">Magnet & Star power-ups</span></div>
+    </div>
+    <div class="stats"><span id="start-best">BEST 0</span><span id="start-wallet">WALLET 0</span></div>
+    <button class="btn big-btn" id="start-btn">▶ <span data-i18n="play">PLAY</span></button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="pause-overlay">
+  <div class="card" id="pause-card">
+    <h2 id="pause-text">Paused</h2>
+    <button class="btn big-btn" id="resume-btn">▶ <span data-i18n="resume">RESUME</span></button>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/world.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
